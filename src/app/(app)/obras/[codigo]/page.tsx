@@ -5,6 +5,7 @@ import { FaseStepper, type Fase } from '@/components/volga/fase-stepper'
 import { TimelineEventos } from '@/components/volga/timeline-eventos'
 import { Button } from '@/components/ui/button'
 import { getObraOuNotFound } from '@/lib/queries/obra-detalhe'
+import { ModalRegistrarEvento } from '@/components/volga/modal-registrar-evento'
 
 export const dynamic = 'force-dynamic'
 
@@ -80,9 +81,7 @@ export default async function ObraDetalhePage({
               <Paperclip className="h-3.5 w-3.5 mr-1.5" />
               Anexos
             </Button>
-            <Button size="sm" disabled>
-              + Registrar evento
-            </Button>
+           <ModalRegistrarEvento obraId={obra.id} codigo={obra.codigo} />
           </div>
         </div>
       </div>

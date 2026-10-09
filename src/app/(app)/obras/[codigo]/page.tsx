@@ -6,6 +6,7 @@ import { TimelineEventos } from '@/components/volga/timeline-eventos'
 import { Button } from '@/components/ui/button'
 import { getObraOuNotFound } from '@/lib/queries/obra-detalhe'
 import { ModalRegistrarEvento } from '@/components/volga/modal-registrar-evento'
+import { SheetEditarObra } from '@/components/volga/sheet-editar-obra'
 
 export const dynamic = 'force-dynamic'
 
@@ -81,7 +82,8 @@ export default async function ObraDetalhePage({
               <Paperclip className="h-3.5 w-3.5 mr-1.5" />
               Anexos
             </Button>
-           <ModalRegistrarEvento obraId={obra.id} codigo={obra.codigo} />
+           <SheetEditarObra obra={obra} />
+	   <ModalRegistrarEvento obraId={obra.id} codigo={obra.codigo} />
           </div>
         </div>
       </div>
